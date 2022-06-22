@@ -8,12 +8,19 @@
   </head>
   <body>
     <div class="container">
-        <h1>Office Employee Management System</h1>
+        <h1>Filter an Employee</h1>
         <hr>
-        <button type="button" href="/all_emp" class="btn btn-success">View All Employee</button>
-        <button type="button" href="/add_emp" class="btn btn-success">Add an Employee</button>
-        <button type="button" href="/remove_emp" class="btn btn-success">Remove an Employee</button>
-        <button type="button" href="/filter_emp" class="btn btn-success">Filter an Employee</button>
+        <form action="/filter_emp" method="post">
+          {% csrf_token %}
+            <label for="name">Employee First/Last Name</label><br>
+            <input type="text" id="name" name="name" value="{{name}}"><br>
+            <label for="dept">Department</label><br>
+            <input type="text" id="dept" name="dept" value="{{dept}}"><br>
+            <label for="role">Role</label><br>
+            <input type="text" id="role" name="role" value="{{role}}"><br>
+      
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
